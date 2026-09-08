@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pigtail"
+  short_description: "The intern who promotes reusable lessons"
+  default_prompt: "Use $learn to promote this completed work into concise guidance in the applicable AGENTS.md files."
