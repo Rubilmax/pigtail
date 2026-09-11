@@ -10,6 +10,10 @@ preferences. When no lesson clears that bar, it writes nothing.
 
 It compares before/after across engineering concerns and explores user intent
 through at least five WHYs per user prompt, grounded in the past discussion.
+It turns supported lessons into forward-looking conventions: when a decision
+applies, why it is preferred, and which guarantees it preserves. Methodical
+comparison of contracts, alternatives, compatibility transitions and performance
+evidence guides future backward-compatible and optimized implementations.
 
 The skill is branded **Pigtail** but named `learn`, so its command remains
 `/learn` (or `$learn`).

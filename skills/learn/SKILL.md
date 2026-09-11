@@ -1,6 +1,6 @@
 ---
 name: learn
-description: Pigtail turns completed work into durable, generalized repository conventions in the applicable AGENTS.md files. Use for /learn or when asked to capture lessons about product behavior, UI/UX, architecture, code style, tests/CI, or refactoring preferences; save nothing when no reusable lesson is supported.
+description: Pigtail turns completed work into durable, forward-looking repository conventions in the applicable AGENTS.md files. Use for /learn or when asked to capture lessons about product behavior, UI/UX, architecture, code style, tests/CI, compatibility, performance, or refactoring preferences; save nothing when no reusable lesson is supported.
 ---
 
 # Pigtail
@@ -47,6 +47,24 @@ Fail any item: save nothing. Generalize only as far as the evidence supports.
 6. Edit only applicable `AGENTS.md` files. Review the focused diff and run
    `git diff --check` for those files. Skip application tests for guidance-only
    edits and say so.
+
+## Forward-looking conventions
+
+Capture when to prefer a decision, why, and guarantees to preserve; include supported
+exceptions, revisit criteria and future checks. Reason methodically from completed work:
+
+1. Map contracts and constraints: consumers, observable behavior, defaults, errors,
+   persisted data and supported versions. Separate guarantees from bugs and intended changes.
+2. Compare simplest viable approaches against constraints and repository patterns;
+   capture decisive tradeoffs and shifted complexity/resource costs, never invented rejections or rationale.
+3. Trace old consumers/data alongside new behavior. Prefer additive, contract-preserving
+   changes; record relevant migration/rollout/rollback needs. Honor explicitly intended breaks
+   without permanent shims or freezing incidental behavior.
+4. Tie optimization to workloads, bottlenecks and resource costs. Inspect comparable
+   before/after measurements and old/new behavior checks; shorter code proves no speedup.
+   Preserve correctness/compatibility, label unmeasured gains as hypotheses and report missing checks.
+
+Save decision rules, not this analysis; do not run application benchmarks.
 
 ## Engineering perspectives
 
