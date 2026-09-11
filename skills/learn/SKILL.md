@@ -24,20 +24,53 @@ Fail any item: save nothing. Generalize only as far as the evidence supports.
 ## Notebook routine
 
 1. Find the repository root and every `AGENTS.md`. Read the guidance governing
-   each changed path, plus the request, discussion, outcome and focused diff.
-   Isolate unrelated and user-owned changes.
-2. Look for durable product/UI behavior, layout, style and accessibility; code
-   conventions and architecture; test/CI scaffolding; and the maintainer's way of
-   refactoring or simplifying. Treat implementation as evidence, not intent.
-3. Reject task history, exact task details, temporary paths or ports, private
+   each changed path, the available discussion and both versions of the focused
+   diff against its stated base, including relevant uncommitted work. Preserve
+   unrelated and user-owned changes.
+2. For **every user-authored prompt**, including questions, corrections and
+   confirmations without code changes, ask **at least five progressively deeper
+   WHYs** about the outcome, problem, impact, constraints and underlying priorities.
+   Answer from discussion evidence; label inference and leave unsupported motives
+   unknown. Ask the user only when missing rationale changes a lesson. Later
+   corrections supersede earlier intent. Treat implementation as evidence, not intent.
+3. Compare before/after across the engineering perspectives below, tracing affected
+   callers, contracts and flows. Connect gains, regressions, preserved guarantees
+   and shifted costs to user intent. Distinguish observations from expectations;
+   missing evidence is unverified, not unchanged. Apply the promotion test.
+4. Reject task history, exact task details, temporary paths or ports, private
    data, obvious code facts, generic engineering advice, speculation and
    incidental workarounds.
-4. Accumulate, do not append. Tighten or deduplicate existing guidance. Put a
+5. Accumulate, do not append. Tighten or deduplicate existing guidance. Put a
    repository-wide rule in the root `AGENTS.md`; put a scoped rule in the nearest
    governing file. Never duplicate one rule across scopes.
-5. Edit only applicable `AGENTS.md` files. Review the focused diff and run
+6. Edit only applicable `AGENTS.md` files. Review the focused diff and run
    `git diff --check` for those files. Skip application tests for guidance-only
    edits and say so.
+
+## Engineering perspectives
+
+Scan every group; investigate affected aspects and cross-cutting consequences.
+
+- Product: intent, domain behavior, correctness, edge cases, UI/UX, content,
+  accessibility, localization, discoverability/SEO and analytics.
+- Implementation: architecture, boundaries, ownership, APIs/integrations, types,
+  code surface, reuse, abstractions, duplication and refactoring preferences.
+- Data: models, integrity, precision/time, lifecycle, migrations, compatibility,
+  state/concurrency, transactions, distributed jobs/events, caching and offline sync.
+- Protection: security, trust boundaries, authentication/authorization, tenancy,
+  secrets, abuse resistance, privacy, consent, retention/deletion and compliance.
+- Runtime: reliability, partial failure, retries/idempotency, cancellation, recovery,
+  backups, performance, scalability, capacity/backpressure, resource leaks and energy.
+- Verification: test quality, realism/determinism, observability, diagnostics,
+  alerts and support; use comparable UI evidence and measured performance results.
+- Delivery: builds, dependencies/supply chain/licenses, configuration, environments,
+  CI/CD, infrastructure, rollout/rollback and platform portability.
+- Sustainability: maintainability, developer experience, documentation/adoption,
+  operating costs, vendor constraints and domain guarantees (AI, finance, hardware,
+  scientific data, media), plus any other affected concern.
+
+Save the supported principle and reason, never the checklist or WHY transcript.
+Report material regressions or evidence gaps separately; do not fix application code.
 
 ## Compatibility
 

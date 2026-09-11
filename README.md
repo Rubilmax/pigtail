@@ -8,6 +8,9 @@ durable, generalized lessons into the current repository's applicable
 style, test/CI scaffolding, and a maintainer's refactoring or simplification
 preferences. When no lesson clears that bar, it writes nothing.
 
+It compares before/after across engineering concerns and explores user intent
+through at least five WHYs per user prompt, grounded in the past discussion.
+
 The skill is branded **Pigtail** but named `learn`, so its command remains
 `/learn` (or `$learn`).
 
