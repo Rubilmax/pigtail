@@ -40,9 +40,10 @@ Fail any item: save nothing. Generalize only as far as the evidence supports.
 4. Reject task history, exact task details, temporary paths or ports, private
    data, obvious code facts, generic engineering advice, speculation and
    incidental workarounds.
-5. Accumulate, do not append. Tighten or deduplicate existing guidance. Put a
-   repository-wide rule in the root `AGENTS.md`; put a scoped rule in the nearest
-   governing file. Never duplicate one rule across scopes.
+5. Accumulate, do not append. Prefer precise edits to existing sentences;
+   deduplicate before adding guidance. Put repository-wide rules in the root
+   `AGENTS.md` and scoped rules in the nearest governing file. Never duplicate
+   a rule across scopes.
 6. Edit only applicable `AGENTS.md` files. Review the focused diff and run
    `git diff --check` for those files. Skip application tests for guidance-only
    edits and say so.
@@ -76,6 +77,8 @@ Report material regressions or evidence gaps separately; do not fix application 
 
 Pigtail governs what gets remembered after completed work. Ponytail governs how
 code is built; Caveman governs chat verbosity. They compose without overriding
-one another. Write persisted `AGENTS.md` guidance in normal, concise prose.
+one another. Write persisted `AGENTS.md` guidance in the fewest clear, natural
+words that preserve the principle, reason and necessary qualifications.
 
-Report the lesson or no-op, validation, and untouched pre-existing changes.
+Report the lesson or no-op and validation in one or two short sentences. Add only
+material caveats or relevant untouched changes; omit narration and repetition.
