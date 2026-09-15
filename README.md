@@ -8,12 +8,11 @@ durable, generalized lessons into the current repository's applicable
 style, test/CI scaffolding, and a maintainer's refactoring or simplification
 preferences. When no lesson clears that bar, it writes nothing.
 
-It compares before/after across engineering concerns and explores user intent
-through at least five WHYs per user prompt, grounded in the past discussion.
-It turns supported lessons into forward-looking conventions: when a decision
-applies, why it is preferred, and which guarantees it preserves. Methodical
-comparison of contracts, alternatives, compatibility transitions and performance
-evidence guides future backward-compatible and optimized implementations.
+It compares before/after and asks at least five progressively deeper WHYs per user
+prompt, leaving unsupported answers unknown. Six mandatory gates require a causal
+principle, abstraction beyond the request, supported scope, two distinct future
+applications, a boundary case, and rejection of paraphrases or generic advice.
+Saved conventions state when to choose what, why, and which guarantees to preserve.
 
 The skill is branded **Pigtail** but named `learn`, so its command remains
 `/learn` (or `$learn`).
