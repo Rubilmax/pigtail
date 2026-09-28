@@ -1,6 +1,6 @@
 ---
 name: learn
-description: Pigtail turns completed work into durable, forward-looking repository conventions in the applicable AGENTS.md files. Use for /learn or when asked to capture lessons about product behavior, UI/UX, architecture, code style, tests/CI, compatibility, performance, or refactoring preferences; save nothing when no reusable lesson is supported.
+description: Pigtail turns completed work into durable, forward-looking, cross-cutting repository conventions in the applicable AGENTS.md files. Use for /learn or when asked to capture lessons about product behavior, UI/UX, architecture, code style, tests/CI, compatibility, performance, or refactoring preferences; save nothing when no cross-cutting lesson is supported.
 ---
 
 # Pigtail
@@ -21,10 +21,12 @@ After the five WHYs, pass each candidate through every gate before editing
    conditions and guarantees. Retain names/APIs identifying essential mechanisms.
    Combine prompts supporting the same principle, not merely the same topic.
 3. **Bound the rule.** State when to choose what, why, and what must remain true.
-   Use the smallest useful scope; widen only with supporting evidence.
-4. **Prove transfer.** Show decisions the rule changes beyond the original request
-   in two materially different future tasks within that scope, varying workflow,
-   consumer or failure mode. Renaming the task fails. Hypotheticals test usefulness,
+   Save only rules that apply across multiple components, layouts, behaviors,
+   performance issues, security paths or data flows. Reject rules confined to
+   one component or layout. Widen scope only when evidence supports it.
+4. **Prove transfer.** Show decisions the rule changes in two materially different
+   future tasks across distinct app areas or flows. Renaming a task or changing
+   two details of the same component/layout fails. Hypotheticals test usefulness,
    not broader applicability.
 5. **Probe the boundary.** Identify a case lacking the supporting condition, where
    the rule should not decide. This establishes neither an exception nor the
@@ -35,12 +37,10 @@ After the five WHYs, pass each candidate through every gate before editing
 Revise failing candidates and repeat the gates; save nothing if none qualify.
 Persist only the concise condition, decision, reason and guarantee.
 
-Example: “Use invoice locale in the archived CSV,” because archived presentation
-must survive account language changes, yields “Format archived invoice outputs
-using their issue-time locale to preserve historical presentation.” This guides
-archive previews and regenerated attachments, not new invoices or live dashboards.
-“Always snapshot settings” overgeneralizes. “Move this button into a menu,” without
-rationale or a recurring pattern, yields no lesson.
+Example: If stored reports and regenerated attachments both require their original
+presentation after account settings change, learn “Format persisted outputs using
+their creation-time locale.” A rule limited to one archived CSV or button placement
+yields no lesson.
 
 ## Notebook routine
 
@@ -61,8 +61,8 @@ rationale or a recurring pattern, yields no lesson.
    and shifted costs to user intent. Distinguish observations from expectations;
    missing evidence is unverified, not unchanged. Apply every abstraction gate.
 4. Reject task history, exact task details, temporary paths or ports, private
-   data, obvious code facts, generic engineering advice, speculation and
-   incidental workarounds.
+   data, obvious code facts, generic engineering advice, speculation, incidental
+   workarounds and rules limited to one component or layout.
 5. Accumulate, do not append. Prefer precise edits to existing sentences;
    deduplicate before adding guidance. Put repository-wide rules in the root
    `AGENTS.md` and scoped rules in the nearest governing file. Never duplicate
