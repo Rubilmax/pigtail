@@ -2,7 +2,7 @@
 
 > The intern with the tiny notebook: learn the pattern, not the ticket.
 
-Pigtail is a portable Codex skill that reviews completed work and promotes only
+Pigtail is a portable Claude and Codex skill that reviews completed work and promotes only
 durable, generalized lessons into the current repository's applicable
 `AGENTS.md` files. It can learn product and UI conventions, architecture and code
 style, test/CI scaffolding, and a maintainer's refactoring or simplification
@@ -19,11 +19,28 @@ The skill is branded **Pigtail** but named `learn`, so its command remains
 
 ## Install
 
-Link `skills/learn` into the Codex skills directory as `learn`:
+Install the upstream plugin in Claude Code:
+
+```sh
+claude plugin marketplace add Rubilmax/pigtail
+claude plugin install pigtail@pigtail
+```
+
+Or install it in Codex:
+
+```sh
+codex plugin marketplace add Rubilmax/pigtail
+codex plugin add pigtail@pigtail
+```
+
+For a direct skill install without the plugin, link `skills/learn` into the
+client's skills directory:
 
 ```sh
 ln -s /path/to/pigtail/skills/learn ~/.codex/skills/learn
 ```
+
+For Claude Code, use `~/.claude/skills/learn` instead.
 
 ## Compatibility
 
@@ -37,4 +54,6 @@ persisted `AGENTS.md` guidance in normal prose.
 ```text
 skills/learn/SKILL.md
 skills/learn/agents/openai.yaml
+.claude-plugin/plugin.json
+.claude-plugin/marketplace.json
 ```
