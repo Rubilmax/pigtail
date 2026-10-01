@@ -1,0 +1,9 @@
+{
+  "name": "pigtail",
+  "version": "0.1.0",
+  "description": "Promote supported, cross-cutting lessons from completed work into repository guidance.",
+  "author": {
+    "name": "Romain Milon",
+    "url": "https://github.com/Rubilmax"
+  }
+}

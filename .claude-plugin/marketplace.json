@@ -1,0 +1,16 @@
+{
+  "name": "pigtail",
+  "description": "Pigtail's reusable repository learning skill.",
+  "owner": {
+    "name": "Romain Milon",
+    "url": "https://github.com/Rubilmax"
+  },
+  "plugins": [
+    {
+      "name": "pigtail",
+      "source": "./",
+      "description": "Capture reusable repository conventions after completed work.",
+      "category": "productivity"
+    }
+  ]
+}
